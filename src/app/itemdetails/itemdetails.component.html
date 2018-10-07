@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let item of db.foodCategories; index as i">
+
+      <div *ngFor="let fooditem of item.fooditems; index as i" class="col-3" style="top: 50px">
+        <mat-card>
+          <mat-card-header>
+            <mat-toolbar class="mat-elevation-z5">
+              <div class="arrow">
+                <mat-icon>arrow_back_ios</mat-icon>
+              </div>
+              <p class="itemtitle"> {{fooditem.name}}</p>
+            </mat-toolbar>
+          </mat-card-header>
+
+          <mat-card-content style="padding: 10px; background: whitesmoke; padding-bottom: 20px">
+            <p style="padding:2%"> ({{fooditem.description}})</p>
+            <hr>
+            <h3 style="padding:2%">Options
+            </h3>
+            <h4 *ngIf= "item.choicesAndAddons.Crust[0]" >Crust</h4>
+            <div *ngFor="let crust of item.choicesAndAddons.Crust">
+            <p  *ngIf= "crust" class="options mat-elevation-z2">{{crust}}</p>
+          </div>
+        <h4>Extra Toppings</h4>
+        <p class="options mat-elevation-z2">{{item.choicesAndAddons.ExtraToppings[0]}}</p>
+          </mat-card-content>
+
+        </mat-card>
+
+      </div>
+    </div>
+  </div>
+</div>

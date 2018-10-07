@@ -1,0 +1,21 @@
+<mat-sidenav-container class="sidenav">
+  <mat-sidenav mode="side" opened class="mat-elevation-z10">
+    <mat-toolbar>the thing</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/foodmenu" routerLinkActive="active">layout</a>
+      <a mat-list-item routerLink="/foodmenulisting" routerLinkActive="active">Food menu listing</a>
+      <a mat-list-item routerLink="/itemdetails" routerLinkActive="active">Food menu item details</a>
+      <a mat-list-item routerLink="/JsonDS" routerLinkActive="active">JSON data structure</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+      <router-outlet></router-outlet>
+
+
+  </mat-sidenav-content>
+
+
+
+</mat-sidenav-container>

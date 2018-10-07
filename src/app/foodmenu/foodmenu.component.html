@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8" style="top: 50px">
+      <mat-accordion multi="true">
+        <mat-expansion-panel style="margin : 5px" *ngFor="let item of db.foodCategories; index as i">
+          <mat-expansion-panel-header collapsedHeight="150px" expandedHeight="150px">
+            <mat-panel-title>
+              <img src="{{item.imageCat}}" alt="no pizza img" height="100" width="150" style="margin-right: 24px">
+              <h1 style="width:100%; display: flex; justify-content: center;">{{item.name}}</h1>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-card *ngFor="let fooditems of item.fooditems" style="margin:5px">
+            <div class="container">
+              <div class="row">
+                <div class="col-auto" style="padding-bottom: 10px">
+                  <img src="{{fooditems.image}}" height="150" width="150" alt="">
+                </div>
+                <div class="col-6">
+                  <mat-card-header>
+                    <mat-card-title> {{fooditems.name}}</mat-card-title>
+                    <mat-card-subtitle> {{fooditems.description}}</mat-card-subtitle>
+                  </mat-card-header>
+                </div>
+              </div>
+            </div>
+            <mat-card-content>
+            </mat-card-content>
+            <p style="text-align: right">{{fooditems.inDetail.price}}</p>
+            <hr>
+            <mat-card-actions style="padding-left:5%">
+              <mat-chip-list>
+                <mat-chip color="accent" selected>{{fooditems.choicesAndAddons}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-actions>
+          </mat-card>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="col-3">
+      <div style="position: -webkit-sticky;
+            position: sticky;
+            top: 50px;">
+        <h4>Choices and Addons</h4>
+        <mat-card style="padding: 0">
+          <mat-card-header style="background:lightgrey">
+            <mat-card-title>
+              <p style="padding-left: 20px">Crust</p>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div *ngFor="let Crust of Crusts" class="container">
+              <div class="row">
+                <div class="col-1" style="margin: auto">
+                  <mat-icon *ngIf="Crust.Checked" aria-label="Checked item">checked</mat-icon>
+                </div>
+                <div class="col-7">
+                  <button (click)="Crust.Checked = !Crust.Checked" style="width: 100%" mat-button>{{Crust.name}}</button>
+                </div>
+                <div class="col-auto" style="margin: auto"> {{Crust.price}}</div>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

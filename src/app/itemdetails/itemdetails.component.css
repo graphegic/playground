@@ -1,0 +1,46 @@
+.container {
+  max-width: 100%;
+}
+
+.mat-card {
+  min-width: 400px;
+  padding: 0;
+  margin: 5%;
+}
+
+::ng-deep .mat-card-header-text {
+  margin: 0 !important;
+}
+
+.mat-toolbar {
+  padding: 0;
+}
+
+.arrow {
+  border-right: 2px solid lightgrey;
+  height: 100%;
+  margin-right: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+}
+
+.itemtitle {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+
+}
+.options {
+    padding-left: 10px;
+    font-size: 1.2rem;
+    margin: 0 10px 20px 10px;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    height: 50px;
+    background: white;
+    border: 1px solid lightgrey;
+
+}

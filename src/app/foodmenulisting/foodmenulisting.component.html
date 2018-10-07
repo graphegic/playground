@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3" style="top: 50px">
+      <mat-accordion multi="true">
+        <mat-expansion-panel expanded= "true" *ngFor="let item of db.foodCategories; index as i">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{item.name}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-card *ngFor="let fooditem of item.fooditems" style="margin:5px">
+            <mat-card-header>
+              <mat-card-title>{{fooditem.name}}</mat-card-title>                             
+              <mat-card-subtitle> {{fooditem.description}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+            </mat-card-content>
+            <p style="text-align: right">{{fooditem.inDetail.price}}</p>
+          </mat-card>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</div>
